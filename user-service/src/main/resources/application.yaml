@@ -1,0 +1,6 @@
+keycloak:
+  auth-server-url: http://localhost:8090
+  realm: Gayrat
+  resource: hr-rest-api
+  credentials:
+    secret: a2zeWIx87DUFam3GbyCLKbmGr493Dbdf
