@@ -22,13 +22,14 @@ spring:
           id: document-service
           uri: lb://document-service
           predicates[0]: Path=/api/document
-
-
       routes[1]:
         uri: lb://employee-service
         id: employee-service
-        predicates[0]: Path=/api/employee
-
+        predicates[0]: Path=/api/employee/**, /api/person/**, /api/department/**, /api/jobTitle/**
+      routes[2]:
+        id: user-service
+        uri: lb://user-service
+        predicates[0]: Path=/api/user/**
 springdoc:
   enable-native-support: true
   api-docs:

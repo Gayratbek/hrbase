@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.util.List;
 
 @Getter
@@ -16,12 +17,19 @@ public class Person {
     private Long id;
     private String fio;
     private String pinfl;
+    private String inpc;
 
-    private String gender;
+    private String sex;
     private String maritalStatus;
     private String address;
     private String phoneNumber;
     private String email;
+
+    private Instant birthDate;
+    private String  birthPlace;
+
+    @OneToOne
+    private Citizenship citizenship;
 
 
     @Transient
